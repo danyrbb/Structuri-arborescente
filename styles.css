@@ -4,7 +4,7 @@
     padding: 0;
     font-family: 'Merriweather', sans-serif;
 }
-html{background-color: #7676bd;}
+html{background-color: #5B85CF;}
 .navbar {
     background: #072533;
     height: 80px;
@@ -128,7 +128,7 @@ html{background-color: #7676bd;}
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 50vh;
+        height: max-content;
         font-size: 1.6rem;
     }
 
@@ -313,12 +313,13 @@ h1 {
 .services__card {
     background-color: #020435; 
     padding: 20px;
-    border-radius: 8px;
-    color: #42AEB5; 
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: linear-gradient(to bottom right, #5B85CF, pink);
     box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1); 
     margin-bottom: none;
     position: relative;
-    z-index: 1; 
+    z-index: 0; 
 }
 
 .services__card h2 {
