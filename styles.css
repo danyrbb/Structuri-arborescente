@@ -234,7 +234,7 @@ html{background-color: #5B85CF;}
     background-color: #020435;
     padding: 14px 32px;
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
     color: #42AEB5;
     margin-top: 2rem;
     cursor: pointer;
@@ -260,13 +260,13 @@ html{background-color: #5B85CF;}
     height: 100%;
     background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); 
     transition: all 0.35s;
-    border-radius: 4px;
+    border-radius: 10px;
     z-index: 1;
     pointer-events: none;
 }
 
 .main__btn:hover {
-    background-color: #304489; 
+    background-color: #220558; 
     color: #42AEB5; 
 }
 
@@ -304,6 +304,11 @@ html{background-color: #5B85CF;}
     }
 }
 
+.main__img--container {
+    text-align: center;
+}
+
+
 h1 {
     background-color: #5B85CF;
     color: white;
@@ -311,34 +316,56 @@ h1 {
 }
 
 .services__card {
+    color: whitesmoke;
     background-color: #020435; 
     padding: 20px;
     border-bottom-left-radius: 20px;
     border-top-right-radius: 20px;
-    background: linear-gradient(to bottom right, #5B85CF, pink);
+    background: linear-gradient(to bottom right,#263152,#263152 );
     box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1); 
     margin-bottom: none;
     position: relative;
     z-index: 0; 
+    text-shadow: 2px 2px 4px rgba(150, 205, 209, 0.5);
+    box-shadow: 0px 0px 10px rgba(223, 218, 218, 0.5);
 }
 
 .services__card h2 {
-    color: #5B85CF; 
+    color: #99b2df; 
+    border-bottom: 2px solid #000000;
+    border-style:bold;
+    padding-bottom: 10px;
+}
+
+h3 {
+    margin-top: 30px;
 }
 
 .services__card p {
-    color: #67FFCC;
+    color: #c3fdf8;
+    margin-bottom: 30px; 
 }
 
 h1 {
     background-color: #5B85CF;
     color: white;
-    padding: 40px 0px; 
+    padding: 40px; 
     display: block; 
     text-align: center; 
+    animation: glowing 20s linear;
     transition: background-color 0.3s ease; 
-    border-radius: 4px;
+    border-radius: 0px;
     position: relative;
+}
+
+code {
+    display: block;
+    background: #020435;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 7px solid #ccc;
+    white-space: pre-wrap;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 h1:hover {
@@ -349,7 +376,6 @@ h1::before {
     content: '';
     position: absolute;
     top: 0px; 
-   
     bottom: -10px;
     background-color: #020435;
     z-index: -1; 
@@ -362,5 +388,19 @@ h1 {
 
 h1 {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    background: #333;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+section {
+    margin: 20px 0;
+    padding: 20px;
+    border: 3px solid hsl(182, 66%, 58%);
+    border-radius: 35px;
 }
 
