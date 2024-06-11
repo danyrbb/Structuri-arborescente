@@ -37,32 +37,82 @@
         <h1>Arbori binari de căutare</h1>
         <div class="services__container">
             <div class="services__card">
-                <h2>Un arbore binar de căutare (BST) este un arbore binar în care fiecare nod respectă următoarele condiții:
+                <img src="arbore-binar-de-cautare.png" height=300" title="Arbore binar de căutare">
+            <section>
+                    <h3>Proprietăți și Avantaje</h3>
+                    <p>Arborii binari de căutare sunt un tip de arbore binar cu următoarele proprietăți specifice:</p>
                     <ul>
-                        <li>Cheile nodurilor din subarborele stâng sunt mai mici decât cheia nodului curent.</li>
-                        <li>Cheile nodurilor din subarborele drept sunt mai mari decât cheia nodului curent.</li>
+                        <li>Fiecare nod are un număr maxim de doi fii.</li>
+                        <li>Valorile din subarborele stâng sunt mai mici decât valoarea nodului părinte.</li>
+                        <li>Valorile din subarborele drept sunt mai mari decât valoarea nodului părinte.</li>
                     </ul>
-                </h2>
-                <h3>Operații</h3>
-                <ul>
-                    <li>Inserare: Adaugă un nou nod în poziția corespunzătoare păstrând proprietatea BST.</li>
-                    <li>Căutare: Găsește un nod cu o cheie specificată.</li>
-                    <li>Ștergere: Elimină un nod din arbore, ajustând structura pentru a păstra proprietatea BST.</li>
-                    <li>Parcurgere: În inordine, preordine și postordine.</li>
-                </ul>
-                <h3>Inserare</h3>
-                <pre><code>void Inserare(nod* &R, int x) {
-     if (R != NULL) {
-         if (R->info == x) return;
-         else if (R->info > x) Inserare(R->st, x);
-         else Inserare(R->dr, x);
-     } else {
-         R = new nod{x, NULL, NULL};
-     }
-    }</code></pre>
-            </div>
+                    <p>Aceste proprietăți fac ca operațiile de căutare, inserare și ștergere să fie foarte eficiente. În cel mai bun caz, aceste operații au o complexitate de timp O(log n), unde n este numărul de noduri din arbore.</p>
+                </section>
+                <section>
+                    <h3>Operațiuni de bază</h3>
+                    <p>Operațiunile fundamentale pe un arbore binar de căutare includ:</p>
+                    <ul>
+                        <li><strong>Căutarea unui element:</strong> Începem de la rădăcină și comparăm valoarea căutată cu valoarea nodului curent. Dacă sunt egale, elementul a fost găsit. Dacă valoarea căutată este mai mică, continuăm căutarea în subarborele stâng; altfel, în subarborele drept.</li>
+                        <li><strong>Inserarea unui nod nou:</strong> Începem de la rădăcină și găsim poziția corectă pentru noul nod, menținând proprietățile arborelui binar de căutare.</li>
+                        <li><strong>Ștergerea unui nod:</strong> Găsim nodul de șters și gestionăm trei cazuri principale: nodul este o frunză, nodul are un singur copil, nodul are doi copii.</li>
+                    </ul>
+                </section>
+            <section>
+                    <h3>Exemple de cod</h3>
+                </section>
+                    <pre><code>
+        #include &lt;iostream&gt;
+        using namespace std;
+        
+        nod * Cautare(nod * R , int x)
+{
+    if(R == NULL)
+        return NULL;
+    if(R->info == x)
+        return R;
+    if(R->info > x)
+        return Cautare(R->st , x);
+    else
+        return Cautare(R->dr , x);
+}
+
+void Inserare(nod * & R, int x)
+{
+    if(R != NULL)
+    {
+        if(R->info == x)
+            return;
+        else
+            if(R->info > x)
+                Inserare(R->st , x);
+            else
+                Inserare(R->dr , x);
+    }
+    else
+    {
+        R = new nod;
+        R->info = x;
+        R->st = NULL;
+        R->dr = NULL;
+    }   
+}
+
+nod * Cautare(nod * R , int x)
+{
+    if(R == NULL)
+        return NULL;
+    if(R->info == x)
+        return R;
+    if(R->info > x)
+        return Cautare(R->st , x);
+    else
+        return Cautare(R->dr , x);
+}
+
+                    </code></pre>
+            </div>       
         </div>
-    </div> 
+    </div>
 </body>
 <script src="app.js"></script>
 </html>
