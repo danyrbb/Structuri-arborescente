@@ -38,17 +38,59 @@
         <h1>Arbori binari</h1>
         <div class="services__container">
            <div class="services__card">
-              <h2>Un arbore binar este o structură de date arborescentă în care fiecare nod are cel mult doi descendenți, denumiți stâng (left) și drept (right). Fiecare nod poate conține o valoare sau o cheie, și referințe către descendenții săi.</h2>
-              <h3>Proprietăți</h3>
-              <p>Fiecare nod are 0, 1 sau 2 copii. Înălțimea arborelui este numărul maxim de muchii de la rădăcină până la o frunză.</p>
-              <h3>Reprezentare</h3>
-              <pre><code>struct nod {
-      int info;
-      nod *st, *dr;
-  };</code></pre>
-           </div>
+            <div class="container"><img src="arbore-binar.png" height="300" title="Arbore binar">
+                <section>
+                    <h3>Definiție și structură</h3>
+                    <p>Un arbore binar este o structură de date compusă din noduri, unde fiecare nod are cel mult doi copii, denumiți "stâng" și "drept". Componentele principale sunt nodurile, rădăcina, frunzele și înălțimea.</p>
+                </section>
+                <section>
+                    <h3>Operațiuni fundamentale</h3>
+                    <p>Traversările sunt metodele prin care parcurgem nodurile unui arbore. Există trei tipuri principale de traversări:</p>
+                    <ul>
+                        <li>Preordine: Vizităm nodul curent înainte de subarborii săi.</li>
+                        <li>Inordine: Vizităm nodul curent între vizitările subarborilor săi stâng și drept.</li>
+                        <li>Postordine: Vizităm nodul curent după vizitarea subarborilor săi.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Reprezentare în cod</h3>
+                </section>
+                    <code>
+                        #include &lt;iostream&gt;
+                        using namespace std;
+
+                        void Preordine(int x)
+                        {
+                            if(x != 0)
+                            {
+                                cout << x << " ";
+                                Preordine(st[x]);
+                                Preordine(dr[x]);
+                            }
+                        }
+                        void Inordine(int x)
+                        {
+                            if(x != 0)
+                            {
+                                Inordine(st[x]);
+                                cout << x << " ";
+                                Inordine(dr[x]);
+                            }
+                        } 
+        
+                        void Postordine(int x)
+                        {
+                            if(x != 0)
+                            {
+                                Postordine(st[x]);
+                                Postordine(dr[x]);
+                                cout << x << " ";
+                            }
+                        }   
+                    </code>
+            </div>
         </div>
-     </div>
+    </div>
 </body>
 <script src="app.js"></script>
 </html>
