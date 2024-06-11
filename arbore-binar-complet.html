@@ -34,18 +34,82 @@
             </ul>
         </div>
        </nav>
-    <div class="services" id="/arbore-binar-complet">
+    <div class="services" id="/arbore-binar-complet"> 
         <h1>Arbore binar complet</h1>
         <div class="services__container">
             <div class="services__card">
-                <h2>Un arbore binar complet este un arbore binar în care toate nivelurile, cu excepția posibilă a ultimului, sunt complet umplute, iar toate nodurile sunt cât mai la stânga posibil.</h2>
-                <h3>Proprietăți</h3>
-                <p>Înălțimea arborelui este aproximativ log2(n). Este utilizat frecvent în structuri de date cum ar fi heap-uri.</p>
-                <h3>Reprezentare</h3>
-                <pre><code>struct nod {
-        int info;
-        nod *st, *dr;
-    };</code></pre>
+            <section>
+                <h3>Proprietăți și utilizări</h3>
+                <p>Un arbore binar complet este un tip de arbore binar în care toate nivelele, cu excepția posibil a ultimului, sunt complet umplute, iar toate nodurile sunt cât mai la stânga posibil. Proprietățile acestora includ:</p>
+                <ul>
+                    <li>Toate nivelurile sunt complet umplute, cu excepția posibil a ultimului.</li>
+                    <li>Ultimul nivel are toate nodurile aliniate la stânga.</li>
+                </ul>
+                <p>Arborii binari compleți sunt utilizați frecvent în implementarea heap-urilor, care sunt utilizate în algoritmii de planificare și în structuri de date prioritare, cum ar fi cozi de priorități.</p>
+            </section>
+        <section>
+                <h3>Construcția și echilibrarea arborilor</h3>
+                <p>Menținerea unui arbore binar complet după inserări și ștergeri implică tehnici de echilibrare. Câteva tehnici importante includ:</p>
+                <ul>
+                    <li><strong>Inserarea:</strong> Inserarea unui nou nod într-un arbore binar complet se face prin adăugarea acestuia la poziția cea mai stângă posibilă din ultimul nivel sau prin crearea unui nou nivel dacă ultimul este plin.</li>
+                    <li><strong>Ștergerea:</strong> Ștergerea unui nod implică înlocuirea acestuia cu cel mai din dreapta nod de pe ultimul nivel și apoi ștergerea acelui nod.</li>
+                    <li><strong>Echilibrarea:</strong> După inserare sau ștergere, poate fi necesar să reajustăm pozițiile nodurilor pentru a menține structura completă.</li>
+                </ul>
+            </section>
+        <section>
+                <h3>Exemplu vizual și cod</h3>
+            </section>
+                <p>Următorul exemplu de cod demonstrează cum se poate construi un arbore binar complet dintr-o listă de valori:</p>
+                <pre><code>
+                    #include &lt;iostream&gt;
+                    using namespace std;
+                        
+                        struct Nod {
+                            int valoare;
+                            Nod* stanga;
+                            Nod* dreapta;
+                        };
+                        
+                        Nod* creareNod(int valoare) {
+                            Nod* nod = new Nod();
+                            nod->valoare = valoare;
+                            nod->stanga = nullptr;
+                            nod->dreapta = nullptr;
+                            return nod;
+                        }
+                        
+                        Nod* construireArbore(int valori[], int n, int index) {
+                            if (index >= n) return nullptr;
+                            Nod* radacina = creareNod(valori[index]);
+                            radacina->stanga = construireArbore(valori, n, 2 * index + 1);
+                            radacina->dreapta = construireArbore(valori, n, 2 * index + 2);
+                            return radacina;
+                        }
+                        
+                        void inordine(Nod* radacina) {
+                            if (radacina != nullptr) {
+                                inordine(radacina->stanga);
+                                cout << radacina->valoare << " ";
+                                inordine(radacina->dreapta);
+                            }
+                        }
+    
+                        int main() {
+                            int n;
+                            cin >> n;
+                            int valori[100];
+                            for (int i = 0; i < n; ++i) {
+                                cin >> valori[i];
+                            }
+                        
+                            Nod* radacina = construireArbore(valori, n, 0);
+                        
+                            inordine(radacina);
+                            cout << endl;
+                        
+                            return 0;
+                        }
+                    </code></pre>
             </div>
         </div>
     </div> 
