@@ -1,16 +1,53 @@
-<div class="services" id="arbori-binari">
-    <h1>Arbori binari</h1>
-    <div class="services__container">
-        <div class="services__card">
-            <h2>Un arbore binar este o structură de date arborescentă în care fiecare nod are cel mult doi descendenți, denumiți stâng (left) și drept (right). Fiecare nod poate conține o valoare sau o cheie, și referințe către descendenții săi.</h2>
-            <h3>Proprietăți</h3>
-            <p>Fiecare nod are 0, 1 sau 2 copii. Înălțimea arborelui este numărul maxim de muchii de la rădăcină până la o frunză.</p>
-            <h3>Reprezentare</h3>
-            <pre><code>struct nod {
-    int info;
-    nod *st, *dr;
-};</code></pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html#start" id="navbar__logo"><img src="images/logo.png"></i>  ARBORI C++</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span> 
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links">Acasa</a>
+                 </li>
+                <li class="navbar__item">
+                   <a href="introducere.html" class="navbar__links">Introducere</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="arbori-binari.html" class="navbar__links">Arbori binari</a>
+                 </li>
+                 <li class="navbar__item">
+                    <a href="arbori-binari-de-cautare.html" class="navbar__links">Arbori binari de căutare</a>
+                 </li>
+                 <li class="navbar__item">
+                      <a href="arbore-binar-complet.html" class="navbar__links">Arbore binar complet</a>
+                   </li>
+            </ul>
         </div>
-    </div>
-</div>
-
+       </nav>
+    <div class="services" id="arbori-binari">
+        <h1>Arbori binari</h1>
+        <div class="services__container">
+           <div class="services__card">
+              <h2>Un arbore binar este o structură de date arborescentă în care fiecare nod are cel mult doi descendenți, denumiți stâng (left) și drept (right). Fiecare nod poate conține o valoare sau o cheie, și referințe către descendenții săi.</h2>
+              <h3>Proprietăți</h3>
+              <p>Fiecare nod are 0, 1 sau 2 copii. Înălțimea arborelui este numărul maxim de muchii de la rădăcină până la o frunză.</p>
+              <h3>Reprezentare</h3>
+              <pre><code>struct nod {
+      int info;
+      nod *st, *dr;
+  };</code></pre>
+           </div>
+        </div>
+     </div>
+</body>
+</html>
