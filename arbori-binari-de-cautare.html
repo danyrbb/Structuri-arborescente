@@ -1,30 +1,67 @@
-<div class="services" id="arbori-binari-de-cautare">
-    <h1>Arbori binari de căutare</h1>
-    <div class="services__container">
-        <div class="services__card">
-            <h2>Un arbore binar de căutare (BST) este un arbore binar în care fiecare nod respectă următoarele condiții:
-                <ul>
-                    <li>Cheile nodurilor din subarborele stâng sunt mai mici decât cheia nodului curent.</li>
-                    <li>Cheile nodurilor din subarborele drept sunt mai mari decât cheia nodului curent.</li>
-                </ul>
-            </h2>
-            <h3>Operații</h3>
-            <ul>
-                <li>Inserare: Adaugă un nou nod în poziția corespunzătoare păstrând proprietatea BST.</li>
-                <li>Căutare: Găsește un nod cu o cheie specificată.</li>
-                <li>Ștergere: Elimină un nod din arbore, ajustând structura pentru a păstra proprietatea BST.</li>
-                <li>Parcurgere: În inordine, preordine și postordine.</li>
+<!DOCTYPE html>
+<html lang="en">
+<head> <link rel="stylesheet" href="styles.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="index.html#start" id="navbar__logo"><img src="images/logo.png"></i>  ARBORI C++</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span> 
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__links">Acasa</a>
+                 </li>
+                <li class="navbar__item">
+                   <a href="introducere.html" class="navbar__links">Introducere</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="arbori-binari.html" class="navbar__links">Arbori binari</a>
+                 </li>
+                 <li class="navbar__item">
+                    <a href="arbori-binari-de-cautare.html" class="navbar__links">Arbori binari de căutare</a>
+                 </li>
+                 <li class="navbar__item">
+                      <a href="arbore-binar-complet.html" class="navbar__links">Arbore binar complet</a>
+                   </li>
             </ul>
-            <h3>Inserare</h3>
-            <pre><code>void Inserare(nod* &R, int x) {
- if (R != NULL) {
-     if (R->info == x) return;
-     else if (R->info > x) Inserare(R->st, x);
-     else Inserare(R->dr, x);
- } else {
-     R = new nod{x, NULL, NULL};
- }
-}</code></pre>
         </div>
-    </div>
-</div> 
+       </nav>
+    <div class="services" id="arbori-binari-de-cautare">
+        <h1>Arbori binari de căutare</h1>
+        <div class="services__container">
+            <div class="services__card">
+                <h2>Un arbore binar de căutare (BST) este un arbore binar în care fiecare nod respectă următoarele condiții:
+                    <ul>
+                        <li>Cheile nodurilor din subarborele stâng sunt mai mici decât cheia nodului curent.</li>
+                        <li>Cheile nodurilor din subarborele drept sunt mai mari decât cheia nodului curent.</li>
+                    </ul>
+                </h2>
+                <h3>Operații</h3>
+                <ul>
+                    <li>Inserare: Adaugă un nou nod în poziția corespunzătoare păstrând proprietatea BST.</li>
+                    <li>Căutare: Găsește un nod cu o cheie specificată.</li>
+                    <li>Ștergere: Elimină un nod din arbore, ajustând structura pentru a păstra proprietatea BST.</li>
+                    <li>Parcurgere: În inordine, preordine și postordine.</li>
+                </ul>
+                <h3>Inserare</h3>
+                <pre><code>void Inserare(nod* &R, int x) {
+     if (R != NULL) {
+         if (R->info == x) return;
+         else if (R->info > x) Inserare(R->st, x);
+         else Inserare(R->dr, x);
+     } else {
+         R = new nod{x, NULL, NULL};
+     }
+    }</code></pre>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
