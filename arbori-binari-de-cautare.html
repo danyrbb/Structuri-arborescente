@@ -1,0 +1,30 @@
+<div class="services" id="arbori-binari-de-cautare">
+    <h1>Arbori binari de căutare</h1>
+    <div class="services__container">
+        <div class="services__card">
+            <h2>Un arbore binar de căutare (BST) este un arbore binar în care fiecare nod respectă următoarele condiții:
+                <ul>
+                    <li>Cheile nodurilor din subarborele stâng sunt mai mici decât cheia nodului curent.</li>
+                    <li>Cheile nodurilor din subarborele drept sunt mai mari decât cheia nodului curent.</li>
+                </ul>
+            </h2>
+            <h3>Operații</h3>
+            <ul>
+                <li>Inserare: Adaugă un nou nod în poziția corespunzătoare păstrând proprietatea BST.</li>
+                <li>Căutare: Găsește un nod cu o cheie specificată.</li>
+                <li>Ștergere: Elimină un nod din arbore, ajustând structura pentru a păstra proprietatea BST.</li>
+                <li>Parcurgere: În inordine, preordine și postordine.</li>
+            </ul>
+            <h3>Inserare</h3>
+            <pre><code>void Inserare(nod* &R, int x) {
+ if (R != NULL) {
+     if (R->info == x) return;
+     else if (R->info > x) Inserare(R->st, x);
+     else Inserare(R->dr, x);
+ } else {
+     R = new nod{x, NULL, NULL};
+ }
+}</code></pre>
+        </div>
+    </div>
+</div> 
